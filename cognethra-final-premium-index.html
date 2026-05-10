@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cognethra — Cognitive Intelligence Architecture</title>
+  <meta name="description" content="Cognethra is a cognitive intelligence architecture in the SOVRA / Entelekron ecosystem, designed for reasoning, knowledge synthesis, cognitive enhancement, Proof-of-Thought systems, and AI-assisted cognition." />
+  <meta property="og:title" content="Cognethra — Cognitive Intelligence Architecture" />
+  <meta property="og:description" content="A sophisticated cognitive intelligence layer for reasoning, memory graphs, neural optimization, Proof-of-Thought systems, and SOVRA-connected AI cognition." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#f8fbff" />
+  <link rel="canonical" href="https://www.cognethra.org/" />
+
+  <style>
+    :root {
+      --bg:#f8fbff; --ink:#07111f; --muted:#617086; --line:rgba(15,23,42,.12);
+      --blue:#2563eb; --cyan:#06b6d4; --violet:#7c3aed; --emerald:#10b981; --gold:#d6a84f;
+      --dark:#020617; --shadow:0 28px 90px rgba(15,23,42,.13); --radius:30px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 8%,rgba(124,58,237,.18),transparent 34rem),radial-gradient(circle at 88% 12%,rgba(6,182,212,.18),transparent 34rem),radial-gradient(circle at 50% 62%,rgba(16,185,129,.11),transparent 42rem),linear-gradient(180deg,#fff 0%,#f8fbff 54%,#eef7ff 100%);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}
+    a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.78);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.05em;font-size:1.22rem}
+    .brand-mark{width:44px;height:44px;border-radius:16px;background:conic-gradient(from 180deg,var(--violet),var(--blue),var(--cyan),var(--emerald),var(--violet));box-shadow:0 16px 42px rgba(124,58,237,.25);position:relative}
+    .brand-mark:before{content:"";position:absolute;inset:9px;border-radius:999px;border:2px solid rgba(255,255,255,.92)}
+    .brand-mark:after{content:"C";position:absolute;inset:0;display:grid;place-items:center;color:white;font-weight:950;font-size:1.05rem;text-shadow:0 2px 12px rgba(0,0,0,.16)}
+    .nav-links{display:flex;align-items:center;gap:18px;color:var(--muted);font-weight:750;font-size:.92rem}.nav-links a:hover{color:var(--ink)}
+    .nav-cta{color:white!important;background:var(--dark);padding:12px 18px;border-radius:999px;font-weight:900;box-shadow:0 14px 34px rgba(2,6,23,.17)}
+    .language-wrap{position:relative;display:inline-flex;align-items:center}.language-select{appearance:none;-webkit-appearance:none;min-height:42px;max-width:150px;padding:0 38px 0 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.88);color:var(--ink);font-weight:850;cursor:pointer;outline:none}.language-wrap:after{content:"⌄";position:absolute;right:14px;top:50%;transform:translateY(-55%);color:var(--muted);pointer-events:none;font-weight:950}
+    .mobile-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:16px;background:white;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}.mobile-toggle span{width:20px;height:2px;background:var(--ink);border-radius:999px;transition:.18s}
+    .mobile-menu{display:none;border-top:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(18px)}.mobile-menu-inner{width:min(1200px,calc(100% - 40px));margin:0 auto;display:grid;gap:10px;padding:16px 0 22px}.mobile-menu a,.mobile-menu label{padding:14px 16px;border-radius:18px;border:1px solid var(--line);background:white;font-weight:850}.mobile-menu label{display:grid;gap:8px;color:var(--muted);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.mobile-menu .language-select{max-width:none;width:100%;border-radius:14px;background:var(--bg)}
+    body.menu-open .mobile-menu{display:block}body.menu-open .mobile-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}body.menu-open .mobile-toggle span:nth-child(2){opacity:0}body.menu-open .mobile-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .hero{padding:96px 0 76px}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.78);color:var(--muted);font-size:.86rem;font-weight:900;box-shadow:0 10px 34px rgba(15,23,42,.07)}
+    .pulse{width:9px;height:9px;border-radius:999px;background:var(--emerald);box-shadow:0 0 0 7px rgba(16,185,129,.14)}
+    h1{margin:24px 0 18px;font-size:clamp(3.1rem,8.8vw,7.6rem);line-height:.86;letter-spacing:-.095em;font-weight:950}.gradient-text{background:linear-gradient(135deg,#020617 4%,var(--violet),var(--blue),var(--cyan),var(--emerald));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{margin:0 0 22px;max-width:900px;font-size:clamp(1.36rem,3vw,2.45rem);line-height:1.06;letter-spacing:-.06em;font-weight:920}.lead{max-width:780px;margin:0;color:var(--muted);font-size:1.08rem;line-height:1.78}
+    .disclosure{margin-top:20px;max-width:780px;padding:14px 16px;border:1px solid rgba(124,58,237,.22);border-radius:20px;background:rgba(255,255,255,.72);color:#4d3a70;font-size:.92rem;line-height:1.55;font-weight:650}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}.btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.86);font-weight:900;transition:.18s}.btn:hover{transform:translateY(-2px)}.btn.primary{color:white;border:none;background:linear-gradient(135deg,var(--violet),var(--blue),var(--cyan));box-shadow:0 20px 52px rgba(124,58,237,.25)}
+    .cog-card{min-height:570px;border-radius:42px;border:1px solid var(--line);background:radial-gradient(circle at 50% 38%,rgba(124,58,237,.24),transparent 15rem),radial-gradient(circle at 76% 18%,rgba(6,182,212,.22),transparent 16rem),radial-gradient(circle at 30% 72%,rgba(16,185,129,.13),transparent 16rem),linear-gradient(180deg,rgba(255,255,255,.86),rgba(238,247,255,.82));box-shadow:var(--shadow);position:relative;overflow:hidden;padding:26px}
+    .cog-card:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(15,23,42,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.045) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(circle at center,#000,transparent 76%)}
+    .mind-orb{position:absolute;left:50%;top:42%;width:325px;height:325px;transform:translate(-50%,-50%);border-radius:999px;background:radial-gradient(circle,rgba(255,255,255,.96) 0 18%,transparent 19%),conic-gradient(from 0deg,rgba(124,58,237,.20),rgba(37,99,235,.20),rgba(6,182,212,.18),rgba(16,185,129,.14),rgba(124,58,237,.20));box-shadow:0 28px 70px rgba(15,23,42,.12);z-index:1;animation:pulseOrb 5s ease-in-out infinite}
+    @keyframes pulseOrb{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.035)}}.mind-orb:before{content:"";position:absolute;inset:40px;border-radius:999px;border:2px dashed rgba(124,58,237,.36);animation:rotate 18s linear infinite}.mind-orb:after{content:"";position:absolute;left:50%;top:48%;width:132px;height:142px;transform:translate(-50%,-50%);border-radius:60px 60px 38px 38px;background:radial-gradient(circle at 50% 32%,white 0 13%,transparent 14%),linear-gradient(135deg,var(--violet),var(--blue),var(--cyan));box-shadow:0 24px 60px rgba(124,58,237,.28)}@keyframes rotate{to{transform:rotate(360deg)}}
+    .neuro-line{position:absolute;z-index:2;height:3px;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.85),rgba(6,182,212,.78),transparent);animation:flow 3s ease-in-out infinite}.l1{left:48px;right:48px;top:36%}.l2{left:72px;right:72px;top:49%;transform:rotate(90deg);animation-delay:-.7s}.l3{left:70px;right:70px;top:43%;transform:rotate(35deg);animation-delay:-1.1s}.l4{left:70px;right:70px;top:43%;transform:rotate(-35deg);animation-delay:-1.6s}@keyframes flow{0%,100%{opacity:.26}50%{opacity:.95}}
+    .interface-panel{position:absolute;z-index:4;width:172px;padding:14px;border-radius:22px;background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.65);box-shadow:0 22px 54px rgba(15,23,42,.12);backdrop-filter:blur(14px);font-size:.78rem;color:var(--muted);line-height:1.45}.interface-panel strong{display:block;color:var(--ink);font-size:.83rem;margin-bottom:5px;letter-spacing:-.02em}.panel-1{left:34px;top:118px}.panel-2{right:34px;top:144px}.panel-3{left:52px;bottom:176px}.panel-4{right:52px;bottom:182px}
+    .float-chip{position:absolute;z-index:5;padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid var(--line);color:var(--muted);font-size:.82rem;font-weight:850;box-shadow:0 16px 38px rgba(15,23,42,.10)}.chip1{top:34px;left:34px}.chip2{top:74px;right:34px}.chip3{bottom:146px;left:46px}
+    .status-card{position:absolute;left:28px;right:28px;bottom:28px;z-index:6;padding:22px;border-radius:26px;color:white;background:rgba(2,6,23,.93);border:1px solid rgba(255,255,255,.16);box-shadow:0 22px 60px rgba(2,6,23,.28)}.status-card strong{display:block;margin-bottom:8px;font-size:1.14rem;letter-spacing:-.04em}.status-card p{margin:0;color:#dbeafe;line-height:1.65}
+    section{padding:84px 0}.section-head{max-width:880px;margin-bottom:36px}.kicker{margin-bottom:12px;color:var(--violet);text-transform:uppercase;letter-spacing:.15em;font-size:.8rem;font-weight:950}h2{margin:0;font-size:clamp(2rem,4.4vw,4rem);line-height:.98;letter-spacing:-.07em;font-weight:950}.section-text{margin-top:18px;color:var(--muted);font-size:1.02rem;line-height:1.75}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}.statement{padding:38px;border-radius:32px;background:white;border:1px solid var(--line);box-shadow:var(--shadow)}.statement.big{color:white;background:linear-gradient(135deg,var(--violet),var(--blue),var(--cyan))}.statement h3{margin:0 0 16px;font-size:1.7rem;line-height:1.08;letter-spacing:-.05em}.statement p{margin:0;color:var(--muted);line-height:1.75}.statement.big p{color:rgba(255,255,255,.88)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{min-height:232px;padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.84);box-shadow:0 16px 50px rgba(15,23,42,.08)}.icon{width:48px;height:48px;margin-bottom:18px;display:grid;place-items:center;border-radius:17px;color:var(--violet);font-weight:950;background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(6,182,212,.12))}.card h3{margin:0 0 12px;font-size:1.13rem;letter-spacing:-.035em}.card p{margin:0;color:var(--muted);line-height:1.66;font-size:.96rem}
+    .dark-band{padding:58px;border-radius:46px;color:white;background:radial-gradient(circle at top left,rgba(124,58,237,.28),transparent 34rem),radial-gradient(circle at bottom right,rgba(6,182,212,.24),transparent 34rem),#020617;box-shadow:var(--shadow)}.dark-band p,.dark-band .section-text{color:#dbeafe;opacity:.88}.stack{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}.layers{display:grid;gap:12px}.layer{display:flex;justify-content:space-between;gap:18px;padding:18px 20px;border-radius:20px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07)}.layer span:first-child{font-weight:900}.layer span:last-child{color:#93c5fd;font-size:.86rem;font-weight:850;text-align:right}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.process-step{padding:24px;border-radius:26px;background:white;border:1px solid var(--line);box-shadow:0 14px 42px rgba(15,23,42,.07)}.process-step strong{display:block;color:var(--violet);margin-bottom:12px;font-size:.9rem}.process-step h3{margin:0 0 10px;letter-spacing:-.04em}.process-step p{margin:0;color:var(--muted);line-height:1.65}
+    .timeline{display:grid;gap:16px}.step{display:grid;grid-template-columns:94px 1fr;gap:18px;padding:24px;border:1px solid var(--line);border-radius:26px;background:white;box-shadow:0 14px 42px rgba(15,23,42,.07)}.step strong{color:var(--violet)}.step h3{margin:0 0 8px;letter-spacing:-.035em}.step p{margin:0;color:var(--muted);line-height:1.68}
+    .cta{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:28px;padding:58px;border-radius:44px;color:white;background:radial-gradient(circle at top,rgba(255,255,255,.24),transparent 25rem),linear-gradient(135deg,#020617,#312e81 52%,#155e75);box-shadow:var(--shadow)}.cta p{color:#dbeafe;line-height:1.75;opacity:.88}.cta .btn{color:white;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18)}.cta .btn.primary{background:linear-gradient(135deg,var(--violet),var(--blue),var(--cyan))}
+    footer{padding:40px 0 56px;color:var(--muted);font-size:.92rem}.footer-row{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}.footer-links{display:flex;gap:14px;flex-wrap:wrap}
+    @media(max-width:980px){.hero-grid,.split,.stack,.cta{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.nav-links{display:none}.mobile-toggle{display:inline-flex}.dark-band,.cta{padding:34px;border-radius:32px}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1200px)}.hero{padding-top:56px}h1{font-size:clamp(3rem,17vw,5rem)}.cards,.process{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.step{grid-template-columns:1fr}.footer-row{flex-direction:column}.cog-card{min-height:570px}.mind-orb{width:245px;height:245px}.interface-panel{width:138px;padding:12px;font-size:.7rem}.panel-1{left:20px;top:130px}.panel-2{right:20px;top:154px}.panel-3{left:24px;bottom:205px}.panel-4{right:24px;bottom:210px}.chip2{top:82px;right:22px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="/" class="brand" aria-label="Cognethra home"><span class="brand-mark"></span><span>Cognethra</span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#process">Architecture</a><a href="#ecosystem">Ecosystem</a><a href="#roadmap">Roadmap</a>
+      <span class="language-wrap"><select class="language-select" aria-label="Select language" data-language-select><option value="/" selected>🇬🇧 English</option><option value="/de/">🇩🇪 Deutsch</option><option value="/tr/">🇹🇷 Türkçe</option><option value="/fr/">🇫🇷 Français</option><option value="/es/">🇪🇸 Español</option><option value="/it/">🇮🇹 Italiano</option><option value="/ru/">🇷🇺 Русский</option></select></span>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-toggle><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" data-mobile-menu><div class="mobile-menu-inner">
+    <a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#process">Architecture</a><a href="#ecosystem">Ecosystem</a><a href="#roadmap">Roadmap</a>
+    <label>Language<select class="language-select" aria-label="Select language" data-language-select><option value="/" selected>🇬🇧 English</option><option value="/de/">🇩🇪 Deutsch</option><option value="/tr/">🇹🇷 Türkçe</option><option value="/fr/">🇫🇷 Français</option><option value="/es/">🇪🇸 Español</option><option value="/it/">🇮🇹 Italiano</option><option value="/ru/">🇷🇺 Русский</option></select></label>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div></div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="pulse"></span> Cognitive Intelligence · Knowledge Synthesis · Proof-of-Thought</div>
+      <h1 class="gradient-text">Cognethra</h1>
+      <p class="subtitle">A cognitive intelligence architecture for reasoning, memory, and sovereign AI cognition.</p>
+      <p class="lead">Cognethra is the advanced cognitive intelligence sister architecture within the SOVRA / Entelekron ecosystem. It is designed for knowledge synthesis, reasoning chains, cognitive optimization, semantic memory, Proof-of-Thought systems, and AI-assisted human/system decision intelligence.</p>
+      <div class="disclosure">Cognethra is a cognitive AI infrastructure concept. It is not medical advice or a clinical neurotechnology product. Any future cognitive enhancement, health, biometric, or neural applications require expert review, ethical controls, consent, privacy engineering, and legal compliance.</div>
+      <div class="actions"><a class="btn primary" href="#capabilities">Explore Cognethra →</a><a class="btn" href="#process">Architecture</a><a class="btn" href="#contact">Research Access</a></div>
+    </div>
+
+    <aside class="cog-card" aria-label="Cognethra cognitive intelligence visual">
+      <span class="float-chip chip1">Reasoning Graph</span><span class="float-chip chip2">Cognitive Runtime</span><span class="float-chip chip3">Thought Proof Layer</span>
+      <div class="neuro-line l1"></div><div class="neuro-line l2"></div><div class="neuro-line l3"></div><div class="neuro-line l4"></div><div class="mind-orb"></div>
+      <div class="interface-panel panel-1"><strong>Reasoning</strong>Structured thought paths, decisions, and inference chains.</div>
+      <div class="interface-panel panel-2"><strong>Memory</strong>Semantic context, knowledge graph, and cognitive continuity.</div>
+      <div class="interface-panel panel-3"><strong>Optimization</strong>Learning loops, task focus, and adaptive intelligence flows.</div>
+      <div class="interface-panel panel-4"><strong>Proof</strong>Proof-of-Thought records, governance logic, and verification.</div>
+      <div class="status-card"><strong>Cognethra / Cognitive Intelligence Runtime</strong><p>Connecting reasoning, memory, knowledge, decisions, proofs, agents, and cognitive workflows into one sovereign intelligence layer.</p></div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container split">
+    <div class="statement big"><h3>Cognethra turns raw knowledge into structured cognition.</h3><p>It is designed to help AI agents and human-facing systems reason over information, remember context, evaluate decisions, and produce explainable intelligence.</p></div>
+    <div class="statement"><h3>Sister architecture to Cerebthra</h3><p>Cerebthra focuses on the core cognitive intelligence architecture. Cognethra extends this vision into knowledge synthesis, memory, thought verification, and operational reasoning workflows.</p></div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="container">
+    <div class="section-head"><div class="kicker">Core Capabilities</div><h2>Reasoning, memory, proof, and cognitive optimization for sovereign AI systems.</h2><p class="section-text">Cognethra is designed as a high-level cognition layer that connects SOVRA agents, GraphVAULT memory, Proof-of-Thought governance, and Entelekron intelligence modules.</p></div>
+    <div class="cards">
+      <article class="card"><div class="icon">01</div><h3>Cognitive Reasoning Engine</h3><p>Structured reasoning paths, decision support, inference chains, scenario comparison, and explainable outputs.</p></article>
+      <article class="card"><div class="icon">02</div><h3>Knowledge Synthesis</h3><p>Transform documents, events, signals, and memory into connected understanding and actionable intelligence.</p></article>
+      <article class="card"><div class="icon">03</div><h3>Semantic Memory Layer</h3><p>Connects to GraphVAULT for long-term context, entity relationships, event history, and knowledge continuity.</p></article>
+      <article class="card"><div class="icon">04</div><h3>Proof-of-Thought</h3><p>Supports verifiable reasoning records, governance contributions, cognitive proofs, and MindDAO-style decision systems.</p></article>
+      <article class="card"><div class="icon">05</div><h3>AI Agent Cognition</h3><p>Improves agent planning, task prioritization, memory recall, interaction context, and multi-step execution.</p></article>
+      <article class="card"><div class="icon">06</div><h3>Human-AI Interface</h3><p>Future-ready for cognitive dashboards, learning systems, productivity support, and guided reasoning experiences.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head"><div class="kicker">Architecture</div><h2>From information to cognition.</h2><p class="section-text">Cognethra follows a four-layer cognitive process: ingest, connect, reason, and prove.</p></div>
+    <div class="process">
+      <div class="process-step"><strong>Layer 01</strong><h3>Ingest</h3><p>Documents, signals, actions, conversations, governance events, and system outputs enter the cognitive layer.</p></div>
+      <div class="process-step"><strong>Layer 02</strong><h3>Connect</h3><p>GraphVAULT maps entities, relationships, timelines, source context, and semantic relevance.</p></div>
+      <div class="process-step"><strong>Layer 03</strong><h3>Reason</h3><p>SOVRA and Cognethra evaluate scenarios, derive insights, compare strategies, and form structured reasoning paths.</p></div>
+      <div class="process-step"><strong>Layer 04</strong><h3>Prove</h3><p>ChronoSeal and Proof-of-Thought logic can timestamp, verify, and preserve important reasoning events.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ecosystem">
+  <div class="container">
+    <div class="dark-band stack">
+      <div><div class="kicker">SOVRA / Entelekron Ecosystem</div><h2>The cognitive layer connecting knowledge, memory, agents, and governance.</h2><p class="section-text">Cognethra links SOVRA Core, Cerebthra, GraphVAULT, ChronoSeal, MindDAO, EnteleVAULT, Sentient Signals, Ava Sentient, EnteleSCAN, and future cognitive AI interfaces.</p></div>
+      <div class="layers">
+        <div class="layer"><span>SOVRA Core</span><span>Reasoning · Agents · Intelligence</span></div>
+        <div class="layer"><span>Cerebthra</span><span>Core Cognitive Architecture</span></div>
+        <div class="layer"><span>GraphVAULT</span><span>Knowledge Graph · Memory</span></div>
+        <div class="layer"><span>ChronoSeal</span><span>Timestamped Thought Records</span></div>
+        <div class="layer"><span>MindDAO</span><span>Governance · Proof-of-Thought</span></div>
+        <div class="layer"><span>EnteleVAULT</span><span>Private Memory · Credentials</span></div>
+        <div class="layer"><span>Sentient Signals</span><span>Behavioral Intelligence</span></div>
+        <div class="layer"><span>Ava Sentient</span><span>Human-Facing AI Presence</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usecases">
+  <div class="container">
+    <div class="section-head"><div class="kicker">Use Cases</div><h2>Designed for advanced AI cognition, research, governance, and decision intelligence.</h2><p class="section-text">Cognethra can support AI agents, knowledge workers, researchers, governance systems, validator operations, trading intelligence, and sovereign AI infrastructure.</p></div>
+    <div class="cards">
+      <article class="card"><div class="icon">AI</div><h3>SOVRA Agent Reasoning</h3><p>Memory-aware agent workflows, task decomposition, decision explanation, and autonomous planning support.</p></article>
+      <article class="card"><div class="icon">DAO</div><h3>MindDAO Governance</h3><p>Thought contributions, decision trails, proposal reasoning, participation quality, and governance intelligence.</p></article>
+      <article class="card"><div class="icon">DOC</div><h3>Knowledge Research</h3><p>Synthesize whitepapers, legal documents, technical docs, market reports, and project archives.</p></article>
+      <article class="card"><div class="icon">VAL</div><h3>Validator Intelligence</h3><p>Reason over validator performance, security events, uptime, governance, and operational recommendations.</p></article>
+      <article class="card"><div class="icon">SIG</div><h3>Signal Interpretation</h3><p>Connect Sentient Signals data, market narratives, risk context, and decision-support reasoning.</p></article>
+      <article class="card"><div class="icon">HCI</div><h3>Human-AI Cognition</h3><p>Future cognitive dashboards for learning, planning, memory, focus, productivity, and decision support.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="container">
+    <div class="section-head"><div class="kicker">Roadmap</div><h2>From cognitive concept to sovereign intelligence infrastructure.</h2></div>
+    <div class="timeline">
+      <div class="step"><strong>Phase 01</strong><div><h3>Brand & Research Foundation</h3><p>Launch Cognethra identity, website, documentation, module definition, and ecosystem positioning.</p></div></div>
+      <div class="step"><strong>Phase 02</strong><div><h3>Knowledge Graph Integration</h3><p>Connect GraphVAULT, document intelligence, semantic memory, entity mapping, and reasoning context.</p></div></div>
+      <div class="step"><strong>Phase 03</strong><div><h3>Proof-of-Thought Prototype</h3><p>Build reasoning records, thought contribution scoring, governance logic, and ChronoSeal timestamping.</p></div></div>
+      <div class="step"><strong>Phase 04</strong><div><h3>SOVRA Cognitive Runtime</h3><p>Integrate Cognethra into SOVRA agents, dashboards, MindDAO, and Entelekron intelligence systems.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="cta">
+      <div><div class="kicker">Cognethra Research Network</div><h2>Build the next layer of sovereign AI cognition.</h2><p>For AI researchers, knowledge graph teams, cognitive system builders, governance designers, enterprise intelligence partners, and SOVRA / Entelekron collaborators.</p></div>
+      <div class="actions"><a class="btn primary" href="mailto:team@cognethra.org">Contact Cognethra</a><a class="btn" href="https://www.sovra.network/">SOVRA Network</a><a class="btn" href="https://www.entelekron.org/">Entelekron</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© 2026 Cognethra | Cognitive Intelligence Architecture for SOVRA / Entelekron.</div>
+    <div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="https://www.sovra.network/">SOVRA</a></div>
+  </div>
+</footer>
+
+<script>
+const mobileToggle=document.querySelector('[data-mobile-toggle]');
+const mobileMenu=document.querySelector('[data-mobile-menu]');
+const languageSelects=document.querySelectorAll('[data-language-select]');
+if(mobileToggle&&mobileMenu){mobileToggle.addEventListener('click',()=>{const isOpen=document.body.classList.toggle('menu-open');mobileToggle.setAttribute('aria-expanded',String(isOpen));});mobileMenu.querySelectorAll('a').forEach((link)=>{link.addEventListener('click',()=>{document.body.classList.remove('menu-open');mobileToggle.setAttribute('aria-expanded','false');});});}
+languageSelects.forEach((select)=>{select.addEventListener('change',(event)=>{const target=event.target.value;if(target)window.location.href=target;});});
+</script>
+</body>
+</html>
