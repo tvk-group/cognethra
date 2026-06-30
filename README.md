@@ -1,35 +1,46 @@
-# cognethra
-Cognethra — cognitive intelligence architecture for reasoning, knowledge synthesis, semantic memory, and Proof-of-Thought systems inside the SOVRA / Entelekron ecosystem.
-
 # Cognethra
 
-Cognethra is a cognitive intelligence architecture for reasoning, knowledge synthesis, semantic memory, and Proof-of-Thought systems inside the SOVRA / Entelekron ecosystem.
+Cognitive intelligence architecture for reasoning, knowledge synthesis, semantic memory, and Proof-of-Thought systems inside the SOVRA / Entelekron ecosystem.
 
-## Website
+**Live site:** https://www.cognethra.org  
+**Mobile app:** https://www.cognethra.org/app/
 
-https://www.cognethra.org
+## Structure
 
-## Purpose
+```
+├── index.html              # Marketing homepage
+├── app/index.html          # Installable PWA mobile app
+├── privacy.html            # Privacy policy
+├── terms.html              # Terms of service
+├── disclaimer.html         # Disclaimer
+├── manifest.webmanifest    # PWA manifest
+├── sw.js                   # Service worker
+└── assets/
+    ├── cognethra-home.css  # Main site styles
+    ├── cognethra-home.js   # Navigation, scroll reveal
+    ├── cognethra-app.css   # App shell styles
+    ├── cognethra-app.js    # App tab navigation
+    ├── cognethra-motion.js # Hero network canvas
+    ├── pwa.js              # Install prompt + SW registration
+    └── icons/
+        └── cognethra-app-icon.svg
+```
 
-Cognethra is designed for:
+## Deploy
 
-- Cognitive reasoning
-- Knowledge synthesis
-- Semantic memory
-- GraphVAULT integration
-- Proof-of-Thought systems
-- MindDAO governance logic
-- SOVRA agent cognition
-- Human-AI decision support
+Static site — deploy to Vercel or any static host. No build step required.
 
-## Deployment
+```bash
+# Local preview
+python3 -m http.server 8080
+```
 
-Static HTML website. No build step required.
+## Ecosystem
 
-Vercel settings:
+- [SOVRA Network](https://www.sovra.network/)
+- [Entelekron](https://www.entelekron.org/)
+- [T.V.K. Group](https://www.tvk.group/)
 
-- Framework Preset: Other
-- Root Directory: ./
-- Build Command: empty
-- Output Directory: empty
-- Install Command: empty
+## License
+
+MIT — see [LICENSE](LICENSE)
