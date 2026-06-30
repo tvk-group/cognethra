@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognethra 认知架构入门 — Cognethra 博客</title>
+  <meta name="description" content="Cognethra 认知智能架构概览：推理层、语义记忆、Proof-of-Thought 与 SOVRA 生态集成。" />
+  <meta name="keywords" content="Cognethra 架构, 认知 AI, 知识合成, Proof-of-Thought, 博客" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="T.V.K. Labs &amp; Technologies LTD" />
+  <meta property="og:title" content="Cognethra 认知架构入门" />
+  <meta property="og:description" content="了解 Cognethra 如何在 SOVRA / Entelekron 生态中连接推理、记忆、证明与智能体认知。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html" />
+  <meta property="og:site_name" content="Cognethra" />
+  <meta property="og:locale" content="zh_Hans" />
+  <meta property="og:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cognethra 认知架构概览" />
+  <meta name="twitter:description" content="Cognethra 认知智能层与生态集成的技术概览。" />
+  <meta name="twitter:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="theme-color" content="#0f2744" />
+  <link rel="canonical" href="https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="en" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="tr" href="https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="de" href="https://www.cognethra.org/de/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.cognethra.org/fr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="es" href="https://www.cognethra.org/es/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="it" href="https://www.cognethra.org/it/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pt" href="https://www.cognethra.org/pt/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nl" href="https://www.cognethra.org/nl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ar" href="https://www.cognethra.org/ar/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ru" href="https://www.cognethra.org/ru/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.cognethra.org/zh-tw/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ja" href="https://www.cognethra.org/ja/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ko" href="https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="hi" href="https://www.cognethra.org/hi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ur" href="https://www.cognethra.org/ur/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pl" href="https://www.cognethra.org/pl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.cognethra.org/ro/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="el" href="https://www.cognethra.org/el/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="sv" href="https://www.cognethra.org/sv/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nb" href="https://www.cognethra.org/no/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="da" href="https://www.cognethra.org/da/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fi" href="https://www.cognethra.org/fi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="he" href="https://www.cognethra.org/he/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="id" href="https://www.cognethra.org/id/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icons/cognethra-app-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/icons/cognethra-app-icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Cognethra" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/cognethra-home.css" />
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Cognethra","legalName":"T.V.K. Labs & Technologies LTD","url":"https://www.cognethra.org","logo":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg","email":"team@cognethra.org","description":"Cognethra 是 SOVRA / Entelekron 生态系统中面向推理、知识合成、语义记忆与 Proof-of-Thought 系统的认知智能架构。","sameAs":["https://www.sovra.network/","https://www.entelekron.org/","https://www.tvk.group/"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cognethra 认知架构入门","description":"Cognethra 认知智能架构概览：推理层、语义记忆、Proof-of-Thought 与 SOVRA 生态集成。","author":{"@type":"Organization","name":"Cognethra 研究团队"},"publisher":{"@type":"Organization","name":"Cognethra","logo":{"@type":"ImageObject","url":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}},"datePublished":"2026-06-01","dateModified":"2026-06-01","mainEntityOfPage":"https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html","inLanguage":"zh-Hans","image":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.cognethra.org/zh-cn/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html"},{"@type":"ListItem","position":3,"name":"Cognethra 认知架构入门","item":"https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html"}]}</script>
+  
+  
+</head>
+<body data-locale="zh-cn">
+  <div class="subtle-grid" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <a href="/zh-cn/" class="brand" aria-label="Cognethra 首页"><span class="mark"></span><span>Cognethra</span></a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="/zh-cn/#about">关于</a>
+        <a href="/zh-cn/#capabilities">核心能力</a>
+        <a href="/zh-cn/#process">架构</a>
+        <a href="/zh-cn/#ecosystem">生态系统</a>
+        <a href="/zh-cn/#usecases">应用场景</a>
+        <a href="/zh-cn/#roadmap">路线图</a>
+        <a href="/zh-cn/#faq">常见问题</a>
+        <a href="/zh-cn/blog/cognitive-architecture-overview.html" class="active">博客</a>
+        <a href="/zh-cn/app/" class="nav-app">获取应用</a>
+        <span class="language-wrap">
+          <select class="language-select" aria-label="选择语言" data-language-select data-page-kind="home">
+            <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/">🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/" selected>🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/">🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/">🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+          </select>
+        </span>
+        <a href="/zh-cn/#contact" class="nav-cta">联系我们</a>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="打开菜单" aria-expanded="false" data-mobile-toggle><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu><div class="mobile-menu-inner">
+      <a href="/zh-cn/#about">关于</a>
+      <a href="/zh-cn/#capabilities">核心能力</a>
+      <a href="/zh-cn/#process">架构</a>
+      <a href="/zh-cn/#ecosystem">生态系统</a>
+      <a href="/zh-cn/#usecases">应用场景</a>
+      <a href="/zh-cn/#roadmap">路线图</a>
+      <a href="/zh-cn/#faq">常见问题</a>
+      <a href="/zh-cn/blog/cognitive-architecture-overview.html">博客</a>
+      <a href="/zh-cn/app/">获取应用</a>
+      <label>语言
+        <select class="language-select" aria-label="选择语言" data-language-select data-page-kind="home">
+          <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/">🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/" selected>🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/">🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/">🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+        </select>
+      </label>
+      <a href="/zh-cn/#contact" class="nav-cta">联系我们</a>
+    </div></div>
+  </header>
+  <main class="legal-page article-page"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-cn/">首页</a> / <a href="/zh-cn/blog/cognitive-architecture-overview.html">博客</a> / <span>Cognethra 认知架构入门</span></nav>
+    <p class="updated">发布于 2026 年 6 月 · 阅读约 8 分钟 · Cognethra 研究团队</p>
+    <h1>Cognethra 认知架构入门</h1>
+    <p class="lead">Cognethra 如何在 SOVRA / Entelekron 生态中连接推理、语义记忆、Proof-of-Thought 与智能体认知。</p>
+    <p>Cognethra 正被开发为 TVK 生态系统的认知智能层。本文介绍其架构层级、生态关系及主权 AI 认知的研究方向。</p>
+    <h2>为何需要专用认知层</h2><p>企业 AI 系统需要的不仅是聊天界面。它们需要结构化推理、持久记忆、可验证的思维记录与面向智能体的认知。Cognethra 旨在在原始信息与决策级智能之间提供这一层。</p>
+    <h2>四层架构：摄入、连接、推理、证明</h2><p>Cognethra 将认知组织为四个运营层。信息通过摄入管道进入，通过 GraphVAULT 语义记忆连接，由 SOVRA 智能体进行推理，并可通过 Proof-of-Thought 与 ChronoSeal 验证流程持久保存。</p>
+    <h2>生态集成</h2><p>Cognethra 并非独立产品。它旨在与 SOVRA Core、Entelekron 信任模块、MindDAO 治理、Sentient Signals 及 TVK 技术栈中未来面向人类的认知界面互操作。</p>
+    <h2>研究访问与下一步</h2><p>Cognethra 处于研究与试点准备阶段。研究人员、知识图谱团队与生态合作伙伴可联系 team@cognethra.org 讨论协作、架构审查与未来集成路径。</p>
+    <section style="margin-top:40px;padding:24px;border:1px solid var(--line);border-radius:12px;background:white">
+      <h2>相关资源</h2>
+      <p><a href="/zh-cn/#capabilities">探索核心能力</a> · <a href="/zh-cn/#process">查看架构</a> · <a href="/zh-cn/app/">获取移动应用</a> · <a href="mailto:team@cognethra.org">联系研究团队</a></p>
+    </section>
+    <p style="margin-top:32px"><a href="/zh-cn/">← 返回 Cognethra</a></p>
+  </div></main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Cognethra</div>
+          <p>面向 SOVRA / Entelekron · TVK 生态的认知智能架构</p>
+        </div>
+        <div class="footer-col">
+          <h4>平台</h4>
+          <div class="footer-links">
+            <a href="/zh-cn/#capabilities">核心能力</a>
+            <a href="/zh-cn/#process">架构</a>
+            <a href="/zh-cn/#faq">常见问题</a>
+            <a href="/zh-cn/#roadmap">路线图</a>
+            <a href="/zh-cn/blog/cognitive-architecture-overview.html">博客</a>
+            <a href="/zh-cn/app/">移动应用</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>生态系统</h4>
+          <div class="footer-links">
+            <a href="https://www.sovra.network/">SOVRA Network</a>
+            <a href="https://www.entelekron.org/">Entelekron</a>
+            <a href="https://www.tvk.group/" target="_blank" rel="noopener">T.V.K. Group</a>
+            <a href="/zh-cn/privacy.html">隐私</a>
+            <a href="/zh-cn/terms.html">条款</a>
+            <a href="/zh-cn/disclaimer.html">免责声明</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Cognethra · T.V.K. Labs &amp; Technologies LTD</div>
+        <div class="footer-links">
+          <a href="/zh-cn/privacy.html">隐私</a>
+          <a href="/zh-cn/terms.html">条款</a>
+          <a href="/zh-cn/disclaimer.html">免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body></html>

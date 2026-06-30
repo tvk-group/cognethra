@@ -1,0 +1,9 @@
+{
+  "name": "cognethra",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate-i18n": "node scripts/validate-i18n.mjs"
+  }
+}

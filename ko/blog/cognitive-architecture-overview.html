@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognethra 인지 아키텍처 소개 — Cognethra 블로그</title>
+  <meta name="description" content="Cognethra 인지 인텔리전스 아키텍처 개요: 추론 계층, 시맨틱 메모리, Proof-of-Thought 및 SOVRA 생태계 통합." />
+  <meta name="keywords" content="Cognethra 아키텍처, 인지 AI, 지식 합성, Proof-of-Thought, 블로그" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="T.V.K. Labs &amp; Technologies LTD" />
+  <meta property="og:title" content="Cognethra 인지 아키텍처 소개" />
+  <meta property="og:description" content="Cognethra가 SOVRA / Entelekron 생태계 내에서 추론, 메모리, 증명 및 에이전트 인지를 연결하는 방법." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html" />
+  <meta property="og:site_name" content="Cognethra" />
+  <meta property="og:locale" content="ko" />
+  <meta property="og:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cognethra 인지 아키텍처 개요" />
+  <meta name="twitter:description" content="Cognethra 인지 인텔리전스 계층 및 생태계 통합 기술 개요." />
+  <meta name="twitter:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="theme-color" content="#0f2744" />
+  <link rel="canonical" href="https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="en" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="tr" href="https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="de" href="https://www.cognethra.org/de/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.cognethra.org/fr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="es" href="https://www.cognethra.org/es/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="it" href="https://www.cognethra.org/it/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pt" href="https://www.cognethra.org/pt/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nl" href="https://www.cognethra.org/nl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ar" href="https://www.cognethra.org/ar/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ru" href="https://www.cognethra.org/ru/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.cognethra.org/zh-tw/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ja" href="https://www.cognethra.org/ja/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ko" href="https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="hi" href="https://www.cognethra.org/hi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ur" href="https://www.cognethra.org/ur/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pl" href="https://www.cognethra.org/pl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.cognethra.org/ro/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="el" href="https://www.cognethra.org/el/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="sv" href="https://www.cognethra.org/sv/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nb" href="https://www.cognethra.org/no/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="da" href="https://www.cognethra.org/da/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fi" href="https://www.cognethra.org/fi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="he" href="https://www.cognethra.org/he/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="id" href="https://www.cognethra.org/id/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icons/cognethra-app-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/icons/cognethra-app-icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Cognethra" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/cognethra-home.css" />
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Cognethra","legalName":"T.V.K. Labs & Technologies LTD","url":"https://www.cognethra.org","logo":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg","email":"team@cognethra.org","description":"Cognethra는 SOVRA / Entelekron 생태계 내에서 추론, 지식 합성, 시맨틱 메모리 및 Proof-of-Thought 시스템을 위한 인지 인텔리전스 아키텍처입니다.","sameAs":["https://www.sovra.network/","https://www.entelekron.org/","https://www.tvk.group/"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cognethra 인지 아키텍처 소개","description":"Cognethra 인지 인텔리전스 아키텍처 개요: 추론 계층, 시맨틱 메모리, Proof-of-Thought 및 SOVRA 생태계 통합.","author":{"@type":"Organization","name":"Cognethra 연구팀"},"publisher":{"@type":"Organization","name":"Cognethra","logo":{"@type":"ImageObject","url":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}},"datePublished":"2026-06-01","dateModified":"2026-06-01","mainEntityOfPage":"https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html","inLanguage":"ko","image":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.cognethra.org/ko/"},{"@type":"ListItem","position":2,"name":"블로그","item":"https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html"},{"@type":"ListItem","position":3,"name":"Cognethra 인지 아키텍처 소개","item":"https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html"}]}</script>
+  
+  
+</head>
+<body data-locale="ko">
+  <div class="subtle-grid" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <a href="/ko/" class="brand" aria-label="Cognethra 홈"><span class="mark"></span><span>Cognethra</span></a>
+      <nav class="nav-links" aria-label="주요 탐색">
+        <a href="/ko/#about">소개</a>
+        <a href="/ko/#capabilities">핵심 기능</a>
+        <a href="/ko/#process">아키텍처</a>
+        <a href="/ko/#ecosystem">생태계</a>
+        <a href="/ko/#usecases">사용 사례</a>
+        <a href="/ko/#roadmap">로드맵</a>
+        <a href="/ko/#faq">자주 묻는 질문</a>
+        <a href="/ko/blog/cognitive-architecture-overview.html" class="active">블로그</a>
+        <a href="/ko/app/" class="nav-app">앱 받기</a>
+        <span class="language-wrap">
+          <select class="language-select" aria-label="언어 선택" data-language-select data-page-kind="home">
+            <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/">🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/" selected>🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/">🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+          </select>
+        </span>
+        <a href="/ko/#contact" class="nav-cta">문의</a>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-mobile-toggle><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu><div class="mobile-menu-inner">
+      <a href="/ko/#about">소개</a>
+      <a href="/ko/#capabilities">핵심 기능</a>
+      <a href="/ko/#process">아키텍처</a>
+      <a href="/ko/#ecosystem">생태계</a>
+      <a href="/ko/#usecases">사용 사례</a>
+      <a href="/ko/#roadmap">로드맵</a>
+      <a href="/ko/#faq">자주 묻는 질문</a>
+      <a href="/ko/blog/cognitive-architecture-overview.html">블로그</a>
+      <a href="/ko/app/">앱 받기</a>
+      <label>언어
+        <select class="language-select" aria-label="언어 선택" data-language-select data-page-kind="home">
+          <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/">🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/" selected>🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/">🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+        </select>
+      </label>
+      <a href="/ko/#contact" class="nav-cta">문의</a>
+    </div></div>
+  </header>
+  <main class="legal-page article-page"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/ko/">홈</a> / <a href="/ko/blog/cognitive-architecture-overview.html">블로그</a> / <span>Cognethra 인지 아키텍처 소개</span></nav>
+    <p class="updated">2026년 6월 게시 · 읽는 데 8분 · Cognethra 연구팀</p>
+    <h1>Cognethra 인지 아키텍처 소개</h1>
+    <p class="lead">Cognethra가 SOVRA / Entelekron 생태계 내에서 추론, 시맨틱 메모리, Proof-of-Thought 및 에이전트 인지를 연결하는 방법.</p>
+    <p>Cognethra는 TVK 생태계의 인지 인텔리전스 계층으로 개발 중입니다. 본 글은 아키텍처 계층, 생태계 관계 및 주권 AI 인지 연구 방향을 소개합니다.</p>
+    <h2>전용 인지 계층이 중요한 이유</h2><p>엔터프라이즈 AI 시스템에는 채팅 인터페이스 이상이 필요합니다. 구조화된 추론, 지속적인 메모리, 검증 가능한 사고 기록 및 에이전트 대응 인지가 필요합니다. Cognethra는 원시 정보와 의사결정 수준 인텔리전스 사이에 그 계층을 제공하도록 설계되었습니다.</p>
+    <h2>4계층: 수집, 연결, 추론, 증명</h2><p>Cognethra는 인지를 4개의 운영 계층으로 구성합니다. 정보는 수집 파이프라인으로 들어오고, GraphVAULT 시맨틱 메모리로 연결되며, SOVRA 에이전트로 추론되고, Proof-of-Thought 및 ChronoSeal 검증 흐름으로 보존될 수 있습니다.</p>
+    <h2>생태계 통합</h2><p>Cognethra는 독립 제품이 아닙니다. SOVRA Core, Entelekron 신뢰 모듈, MindDAO 거버넌스, Sentient Signals 및 TVK 스택 전반의 미래 사용자 대면 인지 인터페이스와 상호 운용하도록 설계되었습니다.</p>
+    <h2>연구 접근 및 다음 단계</h2><p>Cognethra는 연구 및 파일럿 준비 단계입니다. 연구자, 지식 그래프 팀 및 생태계 파트너는 team@cognethra.org로 연락하여 협력, 아키텍처 검토 및 향후 통합 경로를 논의할 수 있습니다.</p>
+    <section style="margin-top:40px;padding:24px;border:1px solid var(--line);border-radius:12px;background:white">
+      <h2>관련 리소스</h2>
+      <p><a href="/ko/#capabilities">기능 탐색</a> · <a href="/ko/#process">아키텍처 보기</a> · <a href="/ko/app/">모바일 앱 받기</a> · <a href="mailto:team@cognethra.org">연구팀 문의</a></p>
+    </section>
+    <p style="margin-top:32px"><a href="/ko/">← Cognethra로 돌아가기</a></p>
+  </div></main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Cognethra</div>
+          <p>SOVRA / Entelekron · TVK 생태계를 위한 인지 인텔리전스 아키텍처</p>
+        </div>
+        <div class="footer-col">
+          <h4>플랫폼</h4>
+          <div class="footer-links">
+            <a href="/ko/#capabilities">핵심 기능</a>
+            <a href="/ko/#process">아키텍처</a>
+            <a href="/ko/#faq">자주 묻는 질문</a>
+            <a href="/ko/#roadmap">로드맵</a>
+            <a href="/ko/blog/cognitive-architecture-overview.html">블로그</a>
+            <a href="/ko/app/">모바일 앱</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>생태계</h4>
+          <div class="footer-links">
+            <a href="https://www.sovra.network/">SOVRA Network</a>
+            <a href="https://www.entelekron.org/">Entelekron</a>
+            <a href="https://www.tvk.group/" target="_blank" rel="noopener">T.V.K. Group</a>
+            <a href="/ko/privacy.html">개인정보</a>
+            <a href="/ko/terms.html">약관</a>
+            <a href="/ko/disclaimer.html">면책 조항</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Cognethra · T.V.K. Labs &amp; Technologies LTD</div>
+        <div class="footer-links">
+          <a href="/ko/privacy.html">개인정보</a>
+          <a href="/ko/terms.html">약관</a>
+          <a href="/ko/disclaimer.html">면책 조항</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body></html>

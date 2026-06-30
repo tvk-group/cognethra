@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognethra Bilişsel Mimarisi Tanıtımı — Cognethra Blog</title>
+  <meta name="description" content="Cognethra bilişsel zeka mimarisine genel bakış: akıl yürütme katmanları, anlamsal bellek, Proof-of-Thought ve SOVRA ekosistem entegrasyonu." />
+  <meta name="keywords" content="Cognethra mimarisi, bilişsel yapay zeka, bilgi sentezi, Proof-of-Thought, blog" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="T.V.K. Labs &amp; Technologies LTD" />
+  <meta property="og:title" content="Cognethra Bilişsel Mimarisi Tanıtımı" />
+  <meta property="og:description" content="Cognethra'nın SOVRA / Entelekron ekosisteminde akıl yürütme, bellek, kanıt ve ajan bilişini nasıl birleştirdiğini öğrenin." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html" />
+  <meta property="og:site_name" content="Cognethra" />
+  <meta property="og:locale" content="tr" />
+  <meta property="og:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cognethra Bilişsel Mimarisi Genel Bakış" />
+  <meta name="twitter:description" content="Cognethra bilişsel zeka katmanları ve ekosistem entegrasyonunun teknik genel bakışı." />
+  <meta name="twitter:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="theme-color" content="#0f2744" />
+  <link rel="canonical" href="https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="en" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="tr" href="https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="de" href="https://www.cognethra.org/de/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.cognethra.org/fr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="es" href="https://www.cognethra.org/es/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="it" href="https://www.cognethra.org/it/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pt" href="https://www.cognethra.org/pt/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nl" href="https://www.cognethra.org/nl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ar" href="https://www.cognethra.org/ar/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ru" href="https://www.cognethra.org/ru/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.cognethra.org/zh-tw/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ja" href="https://www.cognethra.org/ja/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ko" href="https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="hi" href="https://www.cognethra.org/hi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ur" href="https://www.cognethra.org/ur/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pl" href="https://www.cognethra.org/pl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.cognethra.org/ro/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="el" href="https://www.cognethra.org/el/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="sv" href="https://www.cognethra.org/sv/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nb" href="https://www.cognethra.org/no/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="da" href="https://www.cognethra.org/da/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fi" href="https://www.cognethra.org/fi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="he" href="https://www.cognethra.org/he/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="id" href="https://www.cognethra.org/id/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icons/cognethra-app-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/icons/cognethra-app-icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Cognethra" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/cognethra-home.css" />
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Cognethra","legalName":"T.V.K. Labs & Technologies LTD","url":"https://www.cognethra.org","logo":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg","email":"team@cognethra.org","description":"Cognethra, SOVRA / Entelekron ekosisteminde akıl yürütme, bilgi sentezi, anlamsal bellek ve Proof-of-Thought sistemleri için bilişsel zeka mimarisidir.","sameAs":["https://www.sovra.network/","https://www.entelekron.org/","https://www.tvk.group/"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cognethra Bilişsel Mimarisi Tanıtımı","description":"Cognethra bilişsel zeka mimarisine genel bakış: akıl yürütme katmanları, anlamsal bellek, Proof-of-Thought ve SOVRA ekosistem entegrasyonu.","author":{"@type":"Organization","name":"Cognethra Araştırma Ekibi"},"publisher":{"@type":"Organization","name":"Cognethra","logo":{"@type":"ImageObject","url":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}},"datePublished":"2026-06-01","dateModified":"2026-06-01","mainEntityOfPage":"https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html","inLanguage":"tr","image":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://www.cognethra.org/tr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html"},{"@type":"ListItem","position":3,"name":"Cognethra Bilişsel Mimarisi Tanıtımı","item":"https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html"}]}</script>
+  
+  
+</head>
+<body data-locale="tr">
+  <div class="subtle-grid" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <a href="/tr/" class="brand" aria-label="Cognethra ana sayfa"><span class="mark"></span><span>Cognethra</span></a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
+        <a href="/tr/#about">Hakkında</a>
+        <a href="/tr/#capabilities">Yetenekler</a>
+        <a href="/tr/#process">Mimari</a>
+        <a href="/tr/#ecosystem">Ekosistem</a>
+        <a href="/tr/#usecases">Kullanım Alanları</a>
+        <a href="/tr/#roadmap">Yol Haritası</a>
+        <a href="/tr/#faq">SSS</a>
+        <a href="/tr/blog/cognitive-architecture-overview.html" class="active">Blog</a>
+        <a href="/tr/app/" class="nav-app">Uygulamayı Al</a>
+        <span class="language-wrap">
+          <select class="language-select" aria-label="Dil seçin" data-language-select data-page-kind="home">
+            <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/" selected>🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/">🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/">🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+          </select>
+        </span>
+        <a href="/tr/#contact" class="nav-cta">İletişim</a>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" data-mobile-toggle><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu><div class="mobile-menu-inner">
+      <a href="/tr/#about">Hakkında</a>
+      <a href="/tr/#capabilities">Yetenekler</a>
+      <a href="/tr/#process">Mimari</a>
+      <a href="/tr/#ecosystem">Ekosistem</a>
+      <a href="/tr/#usecases">Kullanım Alanları</a>
+      <a href="/tr/#roadmap">Yol Haritası</a>
+      <a href="/tr/#faq">SSS</a>
+      <a href="/tr/blog/cognitive-architecture-overview.html">Blog</a>
+      <a href="/tr/app/">Uygulamayı Al</a>
+      <label>Dil
+        <select class="language-select" aria-label="Dil seçin" data-language-select data-page-kind="home">
+          <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/" selected>🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/">🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/">🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+        </select>
+      </label>
+      <a href="/tr/#contact" class="nav-cta">İletişim</a>
+    </div></div>
+  </header>
+  <main class="legal-page article-page"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/tr/">Ana Sayfa</a> / <a href="/tr/blog/cognitive-architecture-overview.html">Blog</a> / <span>Cognethra Bilişsel Mimarisi Tanıtımı</span></nav>
+    <p class="updated">Haziran 2026'da yayınlandı · 8 dk okuma · Cognethra Araştırma Ekibi</p>
+    <h1>Cognethra Bilişsel Mimarisi Tanıtımı</h1>
+    <p class="lead">Cognethra'nın SOVRA / Entelekron ekosisteminde akıl yürütme, anlamsal bellek, Proof-of-Thought ve ajan bilişini nasıl birleştirdiği.</p>
+    <p>Cognethra, TVK ekosisteminin bilişsel zeka katmanı olarak geliştirilmektedir. Bu makale mimari katmanları, ekosistem ilişkilerini ve egemen yapay zeka bilişi için araştırma yönünü tanıtır.</p>
+    <h2>Neden ayrı bir bilişsel katman önemlidir</h2><p>Kurumsal yapay zeka sistemlerinin sohbet arayüzlerinden fazlasına ihtiyacı vardır. Yapılandırılmış akıl yürütme, kalıcı bellek, doğrulanabilir düşünce kayıtları ve ajana hazır biliş gerektirirler. Cognethra, ham bilgi ile karar düzeyinde zeka arasında bu katmanı sağlamak için tasarlanmıştır.</p>
+    <h2>Dört katman: alma, bağlama, akıl yürütme, kanıtlama</h2><p>Cognethra bilişi dört operasyonel katmanda organize eder. Bilgi alma hatlarından girer, GraphVAULT anlamsal belleği aracılığıyla bağlanır, SOVRA ajanlarıyla akıl yürütülür ve Proof-of-Thought ile ChronoSeal doğrulama akışlarıyla korunabilir.</p>
+    <h2>Ekosistem entegrasyonu</h2><p>Cognethra bağımsız bir ürün değildir. SOVRA Core, Entelekron güven modülleri, MindDAO yönetişimi, Sentient Signals ve TVK yığınındaki gelecekteki insan odaklı bilişsel arayüzlerle birlikte çalışmak üzere tasarlanmıştır.</p>
+    <h2>Araştırma erişimi ve sonraki adımlar</h2><p>Cognethra araştırma ve pilot hazırlık aşamasındadır. Araştırmacılar, bilgi grafiği ekipleri ve ekosistem ortakları iş birliği, mimari inceleme ve gelecekteki entegrasyon yollarını görüşmek için team@cognethra.org adresinden iletişime geçebilir.</p>
+    <section style="margin-top:40px;padding:24px;border:1px solid var(--line);border-radius:12px;background:white">
+      <h2>İlgili kaynaklar</h2>
+      <p><a href="/tr/#capabilities">Yetenekleri keşfedin</a> · <a href="/tr/#process">Mimariyi görüntüleyin</a> · <a href="/tr/app/">Mobil uygulamayı edinin</a> · <a href="mailto:team@cognethra.org">Araştırma ekibiyle iletişime geçin</a></p>
+    </section>
+    <p style="margin-top:32px"><a href="/tr/">← Cognethra'ya dön</a></p>
+  </div></main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Cognethra</div>
+          <p>SOVRA / Entelekron · TVK Ekosistemi için Bilişsel Zeka Mimarisi</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <div class="footer-links">
+            <a href="/tr/#capabilities">Yetenekler</a>
+            <a href="/tr/#process">Mimari</a>
+            <a href="/tr/#faq">SSS</a>
+            <a href="/tr/#roadmap">Yol Haritası</a>
+            <a href="/tr/blog/cognitive-architecture-overview.html">Blog</a>
+            <a href="/tr/app/">Mobil Uygulama</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ekosistem</h4>
+          <div class="footer-links">
+            <a href="https://www.sovra.network/">SOVRA Network</a>
+            <a href="https://www.entelekron.org/">Entelekron</a>
+            <a href="https://www.tvk.group/" target="_blank" rel="noopener">T.V.K. Group</a>
+            <a href="/tr/privacy.html">Gizlilik</a>
+            <a href="/tr/terms.html">Şartlar</a>
+            <a href="/tr/disclaimer.html">Sorumluluk Reddi</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Cognethra · T.V.K. Labs &amp; Technologies LTD</div>
+        <div class="footer-links">
+          <a href="/tr/privacy.html">Gizlilik</a>
+          <a href="/tr/terms.html">Şartlar</a>
+          <a href="/tr/disclaimer.html">Sorumluluk Reddi</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body></html>
