@@ -71,7 +71,7 @@ Translations live in `i18n/{locale}.json`. Edit strings there, then rebuild.
 
 ## Deploy
 
-Vercel runs `npm run build` automatically. Static output — no runtime required.
+Vercel runs `npm run build` automatically, which writes deployable files to `public/`. Static output — no runtime required.
 
 ## Ecosystem
 

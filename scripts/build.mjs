@@ -8,7 +8,27 @@ import { renderHome, renderLegal, renderApp, renderBlog } from "./render.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const i18nDir = path.join(root, "i18n");
-const distRoot = root;
+const distRoot = path.join(root, "public");
+
+function copyPath(src, dest) {
+  const stat = fs.statSync(src);
+  if (stat.isDirectory()) {
+    fs.mkdirSync(dest, { recursive: true });
+    for (const entry of fs.readdirSync(src)) {
+      copyPath(path.join(src, entry), path.join(dest, entry));
+    }
+    return;
+  }
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.copyFileSync(src, dest);
+}
+
+function copyStaticAssets() {
+  copyPath(path.join(root, "assets"), path.join(distRoot, "assets"));
+  for (const file of ["manifest.webmanifest", "sw.js"]) {
+    copyPath(path.join(root, file), path.join(distRoot, file));
+  }
+}
 
 function loadTranslations(code) {
   const file = path.join(i18nDir, `${code}.json`);
@@ -59,6 +79,12 @@ function rootRedirectHtml() {
 
 console.log("Building Cognethra multilingual site…");
 
+if (fs.existsSync(distRoot)) {
+  fs.rmSync(distRoot, { recursive: true, force: true });
+}
+fs.mkdirSync(distRoot, { recursive: true });
+copyStaticAssets();
+
 for (const locale of LOCALES) {
   const t = loadTranslations(locale.code);
   console.log(`  → ${locale.path}`);
@@ -76,4 +102,4 @@ writeFileRelative("sitemap-index.xml", sitemapIndex());
 writeFileRelative("robots.txt", robotsTxt());
 writeFileRelative("index.html", rootRedirectHtml());
 
-console.log(`Built ${LOCALES.length} locales × ${PAGES.length} pages = ${LOCALES.length * PAGES.length} HTML files.`);
+console.log(`Built ${LOCALES.length} locales × ${PAGES.length} pages = ${LOCALES.length * PAGES.length} HTML files in public/.`);
