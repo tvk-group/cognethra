@@ -88,9 +88,14 @@ body[data-page="home"] header:not(.header-scrolled) .mobile-toggle span {
 }
 
 body[data-page="home"] header:not(.header-scrolled) .language-select {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--ink);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+body[data-page="home"] header:not(.header-scrolled) .language-wrap::after {
+  color: var(--muted);
 }
 
 .nav {
@@ -176,16 +181,26 @@ body[data-page="home"] header:not(.header-scrolled) .language-select {
   appearance: none;
   -webkit-appearance: none;
   min-height: 38px;
-  max-width: 160px;
+  max-width: 190px;
   padding: 0 32px 0 12px;
   border-radius: 8px;
   border: 1px solid var(--line);
-  background: white;
+  background: #ffffff;
   color: var(--ink);
   font-weight: 600;
   font-size: 0.82rem;
   cursor: pointer;
   outline: none;
+}
+
+.language-select option {
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.language-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-soft);
 }
 
 .language-wrap::after {
