@@ -20,7 +20,13 @@
   languageSelects.forEach((select) => {
     select.addEventListener("change", (event) => {
       const target = event.target.value;
-      if (target) window.location.href = target;
+      if (!target) return;
+      const pageKind = select.dataset.pageKind || "home";
+      if (pageKind === "home") {
+        window.location.href = target.endsWith("/") ? target : `${target}/`;
+        return;
+      }
+      window.location.href = target.startsWith("/") ? target : `/${target}`;
     });
   });
 

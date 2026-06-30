@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Εισαγωγή στην Γνωστική Αρχιτεκτονική Cognethra — Blog Cognethra</title>
+  <meta name="description" content="Επισκόπηση της αρχιτεκτονικής γνωστικής νοημοσύνης Cognethra: επίπεδα συλλογισμού, σημασιολογική μνήμη, Proof-of-Thought και ενσωμάτωση στο οικοσύστημα SOVRA." />
+  <meta name="keywords" content="αρχιτεκτονική Cognethra, γνωστική AI, σύνθεση γνώσης, Proof-of-Thought, blog" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="T.V.K. Labs &amp; Technologies LTD" />
+  <meta property="og:title" content="Εισαγωγή στην Γνωστική Αρχιτεκτονική Cognethra" />
+  <meta property="og:description" content="Μάθετε πώς η Cognethra συνδέει συλλογισμό, μνήμη, απόδειξη και γνώση πρακτόρων στο οικοσύστημα SOVRA / Entelekron." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.cognethra.org/el/blog/cognitive-architecture-overview.html" />
+  <meta property="og:site_name" content="Cognethra" />
+  <meta property="og:locale" content="el" />
+  <meta property="og:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Επισκόπηση Γνωστικής Αρχιτεκτονικής Cognethra" />
+  <meta name="twitter:description" content="Τεχνική επισκόπηση των επιπέδων γνωστικής νοημοσύνης Cognethra και της ενσωμάτωσης στο οικοσύστημα." />
+  <meta name="twitter:image" content="https://www.cognethra.org/assets/icons/cognethra-app-icon.svg" />
+  <meta name="theme-color" content="#0f2744" />
+  <link rel="canonical" href="https://www.cognethra.org/el/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="en" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="tr" href="https://www.cognethra.org/tr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="de" href="https://www.cognethra.org/de/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.cognethra.org/fr/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="es" href="https://www.cognethra.org/es/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="it" href="https://www.cognethra.org/it/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pt" href="https://www.cognethra.org/pt/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nl" href="https://www.cognethra.org/nl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ar" href="https://www.cognethra.org/ar/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ru" href="https://www.cognethra.org/ru/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.cognethra.org/zh-cn/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.cognethra.org/zh-tw/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ja" href="https://www.cognethra.org/ja/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ko" href="https://www.cognethra.org/ko/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="hi" href="https://www.cognethra.org/hi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ur" href="https://www.cognethra.org/ur/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="pl" href="https://www.cognethra.org/pl/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="ro" href="https://www.cognethra.org/ro/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="el" href="https://www.cognethra.org/el/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="sv" href="https://www.cognethra.org/sv/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="nb" href="https://www.cognethra.org/no/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="da" href="https://www.cognethra.org/da/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="fi" href="https://www.cognethra.org/fi/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="he" href="https://www.cognethra.org/he/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="id" href="https://www.cognethra.org/id/blog/cognitive-architecture-overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.cognethra.org/en/blog/cognitive-architecture-overview.html" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icons/cognethra-app-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/icons/cognethra-app-icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Cognethra" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/cognethra-home.css" />
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Cognethra","legalName":"T.V.K. Labs & Technologies LTD","url":"https://www.cognethra.org","logo":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg","email":"team@cognethra.org","description":"Η Cognethra είναι αρχιτεκτονική γνωστικής νοημοσύνης για συλλογισμό, σύνθεση γνώσης, σημασιολογική μνήμη και συστήματα Proof-of-Thought στο οικοσύστημα SOVRA / Entelekron.","sameAs":["https://www.sovra.network/","https://www.entelekron.org/","https://www.tvk.group/"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Εισαγωγή στην Γνωστική Αρχιτεκτονική Cognethra","description":"Επισκόπηση της αρχιτεκτονικής γνωστικής νοημοσύνης Cognethra: επίπεδα συλλογισμού, σημασιολογική μνήμη, Proof-of-Thought και ενσωμάτωση στο οικοσύστημα SOVRA.","author":{"@type":"Organization","name":"Ομάδα Έρευνας Cognethra"},"publisher":{"@type":"Organization","name":"Cognethra","logo":{"@type":"ImageObject","url":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}},"datePublished":"2026-06-01","dateModified":"2026-06-01","mainEntityOfPage":"https://www.cognethra.org/el/blog/cognitive-architecture-overview.html","inLanguage":"el","image":"https://www.cognethra.org/assets/icons/cognethra-app-icon.svg"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Αρχική","item":"https://www.cognethra.org/el/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.cognethra.org/el/blog/cognitive-architecture-overview.html"},{"@type":"ListItem","position":3,"name":"Εισαγωγή στην Γνωστική Αρχιτεκτονική Cognethra","item":"https://www.cognethra.org/el/blog/cognitive-architecture-overview.html"}]}</script>
+  
+  
+</head>
+<body data-locale="el">
+  <div class="subtle-grid" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <a href="/el/" class="brand" aria-label="Αρχική Cognethra"><span class="mark"></span><span>Cognethra</span></a>
+      <nav class="nav-links" aria-label="Κύρια πλοήγηση">
+        <a href="/el/#about">Σχετικά</a>
+        <a href="/el/#capabilities">Δυνατότητες</a>
+        <a href="/el/#process">Αρχιτεκτονική</a>
+        <a href="/el/#ecosystem">Οικοσύστημα</a>
+        <a href="/el/#usecases">Περιπτώσεις Χρήσης</a>
+        <a href="/el/#roadmap">Οδικός Χάρτης</a>
+        <a href="/el/#faq">Συχνές Ερωτήσεις</a>
+        <a href="/el/blog/cognitive-architecture-overview.html" class="active">Blog</a>
+        <a href="/el/app/" class="nav-app">Λήψη Εφαρμογής</a>
+        <span class="language-wrap">
+          <select class="language-select" aria-label="Επιλογή γλώσσας" data-language-select data-page-kind="home">
+            <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/">🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/">🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/" selected>🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+          </select>
+        </span>
+        <a href="/el/#contact" class="nav-cta">Επικοινωνία</a>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="Άνοιγμα μενού" aria-expanded="false" data-mobile-toggle><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu><div class="mobile-menu-inner">
+      <a href="/el/#about">Σχετικά</a>
+      <a href="/el/#capabilities">Δυνατότητες</a>
+      <a href="/el/#process">Αρχιτεκτονική</a>
+      <a href="/el/#ecosystem">Οικοσύστημα</a>
+      <a href="/el/#usecases">Περιπτώσεις Χρήσης</a>
+      <a href="/el/#roadmap">Οδικός Χάρτης</a>
+      <a href="/el/#faq">Συχνές Ερωτήσεις</a>
+      <a href="/el/blog/cognitive-architecture-overview.html">Blog</a>
+      <a href="/el/app/">Λήψη Εφαρμογής</a>
+      <label>Γλώσσα
+        <select class="language-select" aria-label="Επιλογή γλώσσας" data-language-select data-page-kind="home">
+          <option value="/en/">🇬🇧 English</option>
+            <option value="/tr/">🇹🇷 Türkçe</option>
+            <option value="/de/">🇩🇪 Deutsch</option>
+            <option value="/fr/">🇫🇷 Français</option>
+            <option value="/es/">🇪🇸 Español</option>
+            <option value="/it/">🇮🇹 Italiano</option>
+            <option value="/pt/">🇵🇹 Português</option>
+            <option value="/nl/">🇳🇱 Nederlands</option>
+            <option value="/ar/">🇸🇦 العربية</option>
+            <option value="/ru/">🇷🇺 Русский</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
+            <option value="/zh-tw/">🇹🇼 繁體中文</option>
+            <option value="/ja/">🇯🇵 日本語</option>
+            <option value="/ko/">🇰🇷 한국어</option>
+            <option value="/hi/">🇮🇳 हिन्दी</option>
+            <option value="/ur/">🇵🇰 اردو</option>
+            <option value="/pl/">🇵🇱 Polski</option>
+            <option value="/ro/">🇷🇴 Română</option>
+            <option value="/el/" selected>🇬🇷 Ελληνικά</option>
+            <option value="/sv/">🇸🇪 Svenska</option>
+            <option value="/no/">🇳🇴 Norsk</option>
+            <option value="/da/">🇩🇰 Dansk</option>
+            <option value="/fi/">🇫🇮 Suomi</option>
+            <option value="/he/">🇮🇱 עברית</option>
+            <option value="/id/">🇮🇩 Bahasa Indonesia</option>
+        </select>
+      </label>
+      <a href="/el/#contact" class="nav-cta">Επικοινωνία</a>
+    </div></div>
+  </header>
+  <main class="legal-page article-page"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/el/">Αρχική</a> / <a href="/el/blog/cognitive-architecture-overview.html">Blog</a> / <span>Εισαγωγή στην Γνωστική Αρχιτεκτονική Cognethra</span></nav>
+    <p class="updated">Δημοσιεύτηκε Ιούνιος 2026 · 8 λεπτά ανάγνωσης · Ομάδα Έρευνας Cognethra</p>
+    <h1>Εισαγωγή στην Γνωστική Αρχιτεκτονική Cognethra</h1>
+    <p class="lead">Πώς η Cognethra συνδέει συλλογισμό, σημασιολογική μνήμη, Proof-of-Thought και γνώση πρακτόρων στο οικοσύστημα SOVRA / Entelekron.</p>
+    <p>Η Cognethra αναπτύσσεται ως το επίπεδο γνωστικής νοημοσύνης του οικοσυστήματος TVK. Αυτό το άρθρο παρουσιάζει τα αρχιτεκτονικά της επίπεδα, τις σχέσεις στο οικοσύστημα και την κατεύθυνση έρευνας για κυρίαρχη γνώση AI.</p>
+    <h2>Γιατί έχει σημασία ένα αφιερωμένο γνωστικό επίπεδο</h2><p>Τα επιχειρησιακά συστήματα AI χρειάζονται περισσότερα από διεπαφές chat. Χρειάζονται δομημένο συλλογισμό, ανθεκτική μνήμη, επαληθεύσιμα αρχεία σκέψης και γνώση έτοιμη για πράκτορες. Η Cognethra σχεδιάστηκε να παρέχει αυτό το επίπεδο μεταξύ ακατέργαστης πληροφορίας και νοημοσύνης επιπέδου απόφασης.</p>
+    <h2>Τέσσερα επίπεδα: εισαγωγή, σύνδεση, συλλογισμός, απόδειξη</h2><p>Η Cognethra οργανώνει τη γνώση σε τέσσερα λειτουργικά επίπεδα. Η πληροφορία εισέρχεται μέσω pipelines εισαγωγής, συνδέεται μέσω σημασιολογικής μνήμης GraphVAULT, συλλογίζεται με πράκτορες SOVRA και μπορεί να διατηρηθεί μέσω ροών επαλήθευσης Proof-of-Thought και ChronoSeal.</p>
+    <h2>Ενσωμάτωση στο οικοσύστημα</h2><p>Η Cognethra δεν είναι αυτόνομο προϊόν. Σχεδιάστηκε να interoperate με SOVRA Core, ενότητες εμπιστοσύνης Entelekron, διακυβέρνηση MindDAO, Sentient Signals και μελλοντικές ανθρώπινες γνωστικές διεπαφές σε όλη τη στοίβα TVK.</p>
+    <h2>Πρόσβαση στην έρευνα και επόμενα βήματα</h2><p>Η Cognethra βρίσκεται σε έρευνα και προετοιμασία πιλοτικού προγράμματος. Ερευνητές, ομάδες γραφημάτων γνώσης και συνεργάτες οικοσυστήματος μπορούν να επικοινωνήσουν στο team@cognethra.org για συζήτηση συνεργασίας, αξιολόγησης αρχιτεκτονικής και μελλοντικών διαδρομών ενσωμάτωσης.</p>
+    <section style="margin-top:40px;padding:24px;border:1px solid var(--line);border-radius:12px;background:white">
+      <h2>Σχετικοί πόροι</h2>
+      <p><a href="/el/#capabilities">Εξερευνήστε δυνατότητες</a> · <a href="/el/#process">Δείτε αρχιτεκτονική</a> · <a href="/el/app/">Λάβετε την κινητή εφαρμογή</a> · <a href="mailto:team@cognethra.org">Επικοινωνία με ομάδα έρευνας</a></p>
+    </section>
+    <p style="margin-top:32px"><a href="/el/">← Επιστροφή στην Cognethra</a></p>
+  </div></main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Cognethra</div>
+          <p>Αρχιτεκτονική Γνωστικής Νοημοσύνης για SOVRA / Entelekron · Οικοσύστημα TVK</p>
+        </div>
+        <div class="footer-col">
+          <h4>Πλατφόρμα</h4>
+          <div class="footer-links">
+            <a href="/el/#capabilities">Δυνατότητες</a>
+            <a href="/el/#process">Αρχιτεκτονική</a>
+            <a href="/el/#faq">Συχνές Ερωτήσεις</a>
+            <a href="/el/#roadmap">Οδικός Χάρτης</a>
+            <a href="/el/blog/cognitive-architecture-overview.html">Blog</a>
+            <a href="/el/app/">Κινητή Εφαρμογή</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Οικοσύστημα</h4>
+          <div class="footer-links">
+            <a href="https://www.sovra.network/">SOVRA Network</a>
+            <a href="https://www.entelekron.org/">Entelekron</a>
+            <a href="https://www.tvk.group/" target="_blank" rel="noopener">Ομάδα T.V.K.</a>
+            <a href="/el/privacy.html">Απόρρητο</a>
+            <a href="/el/terms.html">Όροι</a>
+            <a href="/el/disclaimer.html">Αποποίηση</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Cognethra · T.V.K. Labs &amp; Technologies LTD</div>
+        <div class="footer-links">
+          <a href="/el/privacy.html">Απόρρητο</a>
+          <a href="/el/terms.html">Όροι</a>
+          <a href="/el/disclaimer.html">Αποποίηση</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body></html>

@@ -1,6 +1,14 @@
 {
+  "buildCommand": "npm run build",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/privacy.html", "destination": "/en/privacy.html", "permanent": true },
+    { "source": "/terms.html", "destination": "/en/terms.html", "permanent": true },
+    { "source": "/disclaimer.html", "destination": "/en/disclaimer.html", "permanent": true },
+    { "source": "/app", "destination": "/en/app/", "permanent": true },
+    { "source": "/app/", "destination": "/en/app/", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/sw.js",
@@ -13,6 +21,18 @@
       "source": "/manifest.webmanifest",
       "headers": [
         { "key": "Content-Type", "value": "application/manifest+json" }
+      ]
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/sitemap-:locale.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
       ]
     }
   ]
